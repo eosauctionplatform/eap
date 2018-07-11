@@ -2,6 +2,6 @@
 
 EAP = EOS AUCTION PLATFORM = Name of our Project = Also use our token symbol
 
-The EAP software introduces a new blockchain platform designed to EOS-based decentralized applications.This is achieved by creating an operating system-like construct upon which auction market can be built. The Platform provides accounts, authentication, databases, asynchronous communication and the management of applications across the platorm. EAP is a blockchain architecture that may ultimately scale to thousands of transactions per second, eliminates user fees, and allows for quick and easy to connect and simply for us, in the context of a governed blockchain.
+EOS AUCTION PLATFORM is an auction platform based on EOS. EOS AUCTION PLATFORM connects the auction market to the block chain and then we provide a solution that allows anyone to easily and easily participate in auctions and create pages that can be auctioned in an easy way.
 
 
