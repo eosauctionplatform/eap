@@ -1,0 +1,36 @@
+struct AuctionReply {
+    AuctionReply() : msg_id(None) 
+    { }
+    AuctionReply(MessageId msg_id) : msg_id(msg_id) 
+    { }
+    AuctionReply(MessageId msg_id, 
+                 int price) : msg_id(msg_id), best_offer(price)
+    { }
+    AuctionReply(MessageId msg_id,
+                 ITarget<AuctionReply> *seller,
+                 ITarget<AuctionReply> *buyer) : msg_id(msg_id) 
+    { parties.buyer = buyer; parties.seller = seller;}
+
+    MessageId msg_id;
+    union {
+        int best_offer;    // Inquire, BeatenOffer
+        struct { ITarget<AuctionReply> *seller; 
+                 ITarget<AuctionReply> *buyer; } parties; // AuctionConcluded
+    };
+};
+
+struct AuctionMessage {
+    AuctionMessage() : msg_id(None) 
+    { }
+    AuctionMessage(MessageId msg_id, ITarget<AuctionReply> *reply_to) : 
+        msg_id(msg_id), reply_to(reply_to)
+    { }
+    AuctionMessage(MessageId msg_id, int price, ITarget<AuctionReply> *reply_to) :
+        msg_id(msg_id), price(price), reply_to(reply_to)
+    { }
+
+    MessageId msg_id;
+    
+    ITarget<AuctionReply> * reply_to; // Offer, Inquire
+    int price;                        // Offer
+};
